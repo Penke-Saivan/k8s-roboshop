@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mongodb
+  namespace: roboshop
+  labels:
+    component: mongodb
+    project: roboshop
+    tier: db
+spec:
+  replicas: 1
+  selector:
+    #these lables are used to sleect pods
+    matchLabels:
+      component: mongodb
+      project: roboshop
+      tier: db
+      #pod definition
+  template:
+    metadata:
+      labels:
+        component: mongodb
+        project: roboshop
+        tier: db
+    spec:
+      containers:
+        - name: mongodb
+          image: tonyduck/mongodb:v1
