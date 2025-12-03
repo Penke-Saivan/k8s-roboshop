@@ -11,3 +11,4 @@ spec: #like adding in docker run --name and image to run and -p 80:80
   #list of conatiners
   - name: debug
     image: tonyduck/debug:v1
+    imagePullPolicy: Always

@@ -26,6 +26,7 @@ spec:
       containers:
         - name: mongodb
           image: tonyduck/mongodb:v1
+          imagePullPolicy: Always
           readinessProbe:
             tcpSocket:
               port: 27017
