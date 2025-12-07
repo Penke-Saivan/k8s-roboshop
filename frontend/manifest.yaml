@@ -109,7 +109,7 @@ spec:
               path: /
               port: liveness-port
             failureThreshold: 1
-            periodSeconds: 45
+            periodSeconds: 15
             # Override pod-level terminationGracePeriodSeconds #
             # terminationGracePeriodSeconds: 45
           livenessProbe:
@@ -117,9 +117,9 @@ spec:
               path: /
               port: liveness-port
             failureThreshold: 1
-            periodSeconds: 45
+            periodSeconds: 15
             # Override pod-level terminationGracePeriodSeconds #
-            terminationGracePeriodSeconds: 45
+            # terminationGracePeriodSeconds: 45
           volumeMounts:
             - name: nginx-config
               mountPath: /etc/nginx/nginx.conf
@@ -144,4 +144,4 @@ spec:
     - protocol: TCP
       port: 80 #service port - clusterIPport
       targetPort: 8080 #very importand based on nginx.conf
-      nodePort: 30001
+      # nodePort: 30001
