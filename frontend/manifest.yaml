@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: frontend
-  namespace: roboshop 
+  namespace: roboshop
 data:
   nginx.cnf: |
     user nginx;
@@ -121,13 +121,13 @@ spec:
             # Override pod-level terminationGracePeriodSeconds #
             terminationGracePeriodSeconds: 45
           volumeMounts:
-          - name: nginx-config
-            mountPath: /etc/nginx/nginx.conf
-            subPath: nginx.conf
+            - name: nginx-config
+              mountPath: /etc/nginx/nginx.conf
+              subPath: nginx.conf
       volumes:
-      - name: nginx-config
-        configureMap: 
-            name: frontend      
+        - name: nginx-config
+          configureMap:
+            name: frontend
 ---
 apiVersion: v1
 kind: Service
@@ -143,5 +143,5 @@ spec:
   ports:
     - protocol: TCP
       port: 80 #service port - clusterIPport
-      targetPort: 80  #very importand based on nginx.conf
+      targetPort: 80 #very importand based on nginx.conf
       nodePort: 30001
