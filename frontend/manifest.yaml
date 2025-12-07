@@ -143,5 +143,5 @@ spec:
   ports:
     - protocol: TCP
       port: 80 #service port - clusterIPport
-      targetPort: 80 #very importand based on nginx.conf
+      targetPort: 8080 #very importand based on nginx.conf
       nodePort: 30001
